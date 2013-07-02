@@ -1,37 +1,37 @@
 <Widget>
     <Kind>4</Kind>
-    <Name>MAT SHINY</Name>
-    <Value>11.789473534</Value>
+    <Name>M SHINY</Name>
+    <Value>78.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
-    <Name>MAT DIFF R</Name>
-    <Value>192.666671753</Value>
+    <Name>M DIFF R</Name>
+    <Value>203.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
-    <Name>MAT DIFF G</Name>
-    <Value>93.500000000</Value>
+    <Name>M DIFF G</Name>
+    <Value>233.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
-    <Name>MAT DIFF B</Name>
-    <Value>158.666671753</Value>
+    <Name>M DIFF B</Name>
+    <Value>212.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
-    <Name>MAT SPEC R</Name>
-    <Value>17.000000000</Value>
+    <Name>M SPEC R</Name>
+    <Value>255.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
-    <Name>MAT SPEC G</Name>
-    <Value>19.833333969</Value>
+    <Name>M SPEC G</Name>
+    <Value>255.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
-    <Name>MAT SPEC B</Name>
-    <Value>19.833333969</Value>
+    <Name>M SPEC B</Name>
+    <Value>255.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
@@ -47,4 +47,34 @@
     <Kind>4</Kind>
     <Name>AMBI B</Name>
     <Value>102.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>D1 DR</Name>
+    <Value>85.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>D1 DG</Name>
+    <Value>76.500000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>D1 DB</Name>
+    <Value>85.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>D1 SR</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>D1 SG</Name>
+    <Value>255.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>D1 SB</Name>
+    <Value>255.000000000</Value>
 </Widget>

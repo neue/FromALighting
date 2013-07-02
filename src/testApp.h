@@ -21,14 +21,19 @@ class testApp : public ofBaseApp{
     ofxUICanvas *gui;
     void exit();
     void guiEvent(ofxUIEventArgs &e);
+    void setLightOri(ofLight &light, ofVec3f rot);
 
     ofEasyCam cam;
     
     ofLight lightDir1;
+    ofVec3f lightDir1_rot;
     ofLight lightDir2;
+    ofVec3f lightDir2_rot;
     ofLight lightDir3;
     
     ofLight lightAmb;
     
     ofMaterial whiteMat;
+    
+    float timeCode;
 };
