@@ -22,7 +22,8 @@ void testApp::setup(){
     lightDir3.setDirectional();
     lightDir3.setDiffuseColor(ofColor(84.f, 76.f, 85.f));
     lightDir3.setSpecularColor(ofColor(255.f, 255.f, 255.f));
-    lightDir3.setOrientation( ofVec3f(0, -90, 90) );
+    lightDir3_rot = ofVec3f(0, -90, 90);
+    lightDir3.setOrientation( lightDir3_rot );
 
     
     lightAmb.setAmbientColor(ofColor(20.0, 20.0, 20.0, 20.0));
@@ -36,7 +37,7 @@ void testApp::setup(){
     
     timeCode = 0.0;
 
-    gui = new ofxUICanvas(0,0,400,400);
+    gui = new ofxUICanvas(0,0,400,ofGetScreenHeight());
     gui->addWidgetDown(new ofxUILabel("MATERIAL", OFX_UI_FONT_LARGE));
     gui->addWidgetDown(new ofxUISlider(304,8,0.0,128.0,78.0,"M SHINY"));
     
@@ -74,6 +75,17 @@ void testApp::setup(){
     gui->addWidgetDown (new ofxUISlider(90,8,-180,180,90.0,"D2 X"));
     gui->addWidgetRight(new ofxUISlider(90,8,-180,180,0.0,"D2 Y"));
     gui->addWidgetRight(new ofxUISlider(90,8,-180,180,0.0,"D2 Z"));
+    
+    gui->addWidgetDown(new ofxUILabel("DIR LIGHT 3", OFX_UI_FONT_LARGE));
+    gui->addWidgetDown (new ofxUISlider(90,8,0.0,255.0,84.0,"D3 DR"));
+    gui->addWidgetRight(new ofxUISlider(90,8,0.0,255.0,76.0,"D3 DG"));
+    gui->addWidgetRight(new ofxUISlider(90,8,0.0,255.0,85.0,"D3 DB"));
+    gui->addWidgetDown (new ofxUISlider(90,8,0.0,255.0,255.0,"D3 SR"));
+    gui->addWidgetRight(new ofxUISlider(90,8,0.0,255.0,255.0,"D3 SG"));
+    gui->addWidgetRight(new ofxUISlider(90,8,0.0,255.0,255.0,"D3 SB"));
+    gui->addWidgetDown (new ofxUISlider(90,8,-180,180,0.0,"D3 X"));
+    gui->addWidgetRight(new ofxUISlider(90,8,-180,180,-90.0,"D3 Y"));
+    gui->addWidgetRight(new ofxUISlider(90,8,-180,180,90.0,"D3 Z"));
     
     
     gui->addLabelButton("SAVE", false, 180,20);
@@ -281,6 +293,59 @@ void testApp::guiEvent(ofxUIEventArgs &e){
         ofxUISlider *slider = (ofxUISlider *) e.widget;
         lightDir2_rot.z = slider->getScaledValue();
         setLightOri(lightDir2,lightDir2_rot);
+    }
+    
+    // Directional 3
+    if(e.widget->getName() == "D3 DR"){
+        ofColor c = lightDir3.getDiffuseColor();
+        ofxUISlider *slider = (ofxUISlider *) e.widget;
+        c.r = slider->getScaledValue();
+        lightDir3.setDiffuseColor(c);
+    }
+    if(e.widget->getName() == "D3 DG"){
+        ofColor c = lightDir3.getDiffuseColor();
+        ofxUISlider *slider = (ofxUISlider *) e.widget;
+        c.g = slider->getScaledValue();
+        lightDir3.setDiffuseColor(c);
+    }
+    if(e.widget->getName() == "D3 DB"){
+        ofColor c = lightDir3.getDiffuseColor();
+        ofxUISlider *slider = (ofxUISlider *) e.widget;
+        c.b = slider->getScaledValue();
+        lightDir3.setDiffuseColor(c);
+    }
+    if(e.widget->getName() == "D3 SR"){
+        ofColor c = lightDir3.getSpecularColor();
+        ofxUISlider *slider = (ofxUISlider *) e.widget;
+        c.r = slider->getScaledValue();
+        lightDir3.setSpecularColor(c);
+    }
+    if(e.widget->getName() == "D3 SG"){
+        ofColor c = lightDir3.getSpecularColor();
+        ofxUISlider *slider = (ofxUISlider *) e.widget;
+        c.g = slider->getScaledValue();
+        lightDir3.setSpecularColor(c);
+    }
+    if(e.widget->getName() == "D3 SB"){
+        ofColor c = lightDir3.getSpecularColor();
+        ofxUISlider *slider = (ofxUISlider *) e.widget;
+        c.b = slider->getScaledValue();
+        lightDir3.setSpecularColor(c);
+    }
+    if(e.widget->getName() == "D3 X"){
+        ofxUISlider *slider = (ofxUISlider *) e.widget;
+        lightDir3_rot.x = slider->getScaledValue();
+        setLightOri(lightDir3,lightDir3_rot);
+    }
+    if(e.widget->getName() == "D3 Y"){
+        ofxUISlider *slider = (ofxUISlider *) e.widget;
+        lightDir3_rot.y = slider->getScaledValue();
+        setLightOri(lightDir3,lightDir3_rot);
+    }
+    if(e.widget->getName() == "D3 Z"){
+        ofxUISlider *slider = (ofxUISlider *) e.widget;
+        lightDir3_rot.z = slider->getScaledValue();
+        setLightOri(lightDir3,lightDir3_rot);
     }
     
     //

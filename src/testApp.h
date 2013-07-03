@@ -30,7 +30,8 @@ class testApp : public ofBaseApp{
     ofLight lightDir2;
     ofVec3f lightDir2_rot;
     ofLight lightDir3;
-    
+    ofVec3f lightDir3_rot;
+
     ofLight lightAmb;
     
     ofMaterial whiteMat;
